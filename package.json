@@ -13,6 +13,7 @@
     "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-jutsu": "^2.1.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "yup": "^0.28.4"
