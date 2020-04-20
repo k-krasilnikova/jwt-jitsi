@@ -3,6 +3,9 @@ const styles = () => ({
     display: "flex",
     flexDirection: "column",
   },
+  button: {
+    cursor: "pointer",
+  },
 });
 
 export default styles;

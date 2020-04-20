@@ -13,7 +13,11 @@ const RouterComponent = ({ classes, currentUser, setUser, logout }) => {
   return (
     <div className={classes.wrapper}>
       <Router history={history}>
-        {currentUser && <a onClick={logout}>Logout</a>}
+        {currentUser && (
+          <a onClick={logout} className={classes.link}>
+            Logout
+          </a>
+        )}
         <PrivateRoute
           exact
           path={ROUTES.home}

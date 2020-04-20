@@ -17,8 +17,10 @@ const Login = ({ classes, initialValues, validationSchema, login, error }) => {
       >
         {({ errors, status, isSubmitting }) => (
           <Form>
-            <div>
-              <label htmlFor="username">Username</label>
+            <div className={classes.field}>
+              <label htmlFor="username" className={classes.label}>
+                Username
+              </label>
               <Field
                 name="username"
                 type="text"
@@ -28,8 +30,10 @@ const Login = ({ classes, initialValues, validationSchema, login, error }) => {
               />
               <ErrorMessage name="username" component="div" />
             </div>
-            <div>
-              <label htmlFor="password">Password</label>
+            <div className={classes.field}>
+              <label htmlFor="password" className={classes.label}>
+                Password
+              </label>
               <Field
                 name="password"
                 type="password"
@@ -40,7 +44,11 @@ const Login = ({ classes, initialValues, validationSchema, login, error }) => {
               <ErrorMessage name="password" component="div" />
             </div>
             <div>
-              <button type="submit" disabled={isSubmitting}>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={classes.button}
+              >
                 Get JWT
               </button>
             </div>
