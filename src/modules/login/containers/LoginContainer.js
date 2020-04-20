@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 
 import Login from "../components";
@@ -6,8 +6,14 @@ import { ROUTES } from "../../../constants";
 import { history } from "../../../helpers/history";
 // import { loginCall } from "../../../apiCalls";
 
-const LoginContainer = ({ setUser }) => {
+const LoginContainer = ({ currentUser, setUser }) => {
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (currentUser) {
+      history.push(ROUTES.home);
+    }
+  }, [currentUser]);
 
   const initialValues = {
     username: "",

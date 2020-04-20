@@ -14,7 +14,8 @@ const Login = ({ classes, initialValues, validationSchema, login, error }) => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={login}
-        render={({ errors, status, isSubmitting }) => (
+      >
+        {({ errors, status, isSubmitting }) => (
           <Form>
             <div>
               <label htmlFor="username">Username</label>
@@ -46,7 +47,7 @@ const Login = ({ classes, initialValues, validationSchema, login, error }) => {
             {status && <div>{status}</div>}
           </Form>
         )}
-      />
+      </Formik>
     </div>
   );
 };
