@@ -3,13 +3,16 @@ import { Route, Redirect } from "react-router-dom";
 
 import { ROUTES } from "../../constants";
 
-const PrivateRoute = ({ currentUser, component, ...rest }) => {
+const PrivateRoute = ({ currentUser, component }) => {
+  const PrivateComponent = component;
   return (
     <div>
       {!currentUser ? (
         <Redirect to={{ pathname: ROUTES.login }} />
       ) : (
-        <Route {...rest} component={component} />
+        <Route
+          component={() => <PrivateComponent currentUser={currentUser} />}
+        />
       )}
     </div>
   );

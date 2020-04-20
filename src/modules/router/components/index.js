@@ -18,10 +18,14 @@ const RouterComponent = ({ classes, currentUser, setUser, logout }) => {
           exact
           path={ROUTES.home}
           component={HomePage}
-          setUser={setUser}
           currentUser={currentUser}
         />
-        <Route path={ROUTES.login} component={LoginPage} />
+        <Route
+          path={ROUTES.login}
+          component={() => (
+            <LoginPage currentUser={currentUser} setUser={setUser} />
+          )}
+        />
       </Router>
     </div>
   );
