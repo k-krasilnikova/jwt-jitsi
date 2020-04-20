@@ -3,15 +3,13 @@ import { Route, Redirect } from "react-router-dom";
 
 import { ROUTES } from "../../constants";
 
-const PrivateRoute = (props) => {
+const PrivateRoute = ({ currentUser, component, ...rest }) => {
   return (
     <div>
-      {!props.currentUser ? (
-        <Redirect
-          to={{ pathname: ROUTES.login, state: { from: props.location } }}
-        />
+      {!currentUser ? (
+        <Redirect to={{ pathname: ROUTES.login }} />
       ) : (
-        <Route {...props} component={props.component} />
+        <Route {...rest} component={component} />
       )}
     </div>
   );

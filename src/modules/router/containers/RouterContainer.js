@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 
 import Router from "../components";
+import { ROUTES } from "../../../constants";
+import { history } from "../../../helpers/history";
 
 const RouterContainer = () => {
-  //   const [uploads, setUploads] = useState([]);
-  //   const [counter, setCounter] = React.useState(0);
+  const [currentUser, setUser] = useState("");
 
-  //   const uploadFiles = async (e) => {
-  //   };
+  const logout = () => {
+    setUser("");
+    history.push(ROUTES.login);
+  };
 
-  return <Router />;
+  return <Router currentUser={currentUser} setUser={setUser} logout={logout} />;
 };
 
 export default RouterContainer;
