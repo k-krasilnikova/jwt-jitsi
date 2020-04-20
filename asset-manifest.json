@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/jwt-jitsi/static/css/main.d1b05096.chunk.css",
+    "main.js": "/jwt-jitsi/static/js/main.92e6df1b.chunk.js",
+    "main.js.map": "/jwt-jitsi/static/js/main.92e6df1b.chunk.js.map",
+    "runtime-main.js": "/jwt-jitsi/static/js/runtime-main.c3da199e.js",
+    "runtime-main.js.map": "/jwt-jitsi/static/js/runtime-main.c3da199e.js.map",
+    "static/js/2.60968b58.chunk.js": "/jwt-jitsi/static/js/2.60968b58.chunk.js",
+    "static/js/2.60968b58.chunk.js.map": "/jwt-jitsi/static/js/2.60968b58.chunk.js.map",
+    "index.html": "/jwt-jitsi/index.html",
+    "precache-manifest.f9b94ed1de8ba6a38e58cee571632b12.js": "/jwt-jitsi/precache-manifest.f9b94ed1de8ba6a38e58cee571632b12.js",
+    "service-worker.js": "/jwt-jitsi/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/jwt-jitsi/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.60968b58.chunk.js.LICENSE.txt": "/jwt-jitsi/static/js/2.60968b58.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/jwt-jitsi/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c3da199e.js",
+    "static/js/2.60968b58.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.92e6df1b.chunk.js"
+  ]
+}
