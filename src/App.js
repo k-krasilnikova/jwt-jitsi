@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Router, Route } from "react-router-dom";
 
-function App() {
+import PrivateRoute from "./common/PrivateRoute";
+import HomePage from "./modules/jitsi";
+import LoginPage from "./modules/login";
+import { ROUTES } from "./constants";
+import { history } from "./helpers/history";
+import "./App.css";
+
+function App({ currentUser }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router history={history}>
+        {/* {currentUser && <a onClick={() => console.log("Log out")}>Logout</a>} */}
+        <PrivateRoute exact path={ROUTES.home} component={HomePage} />
+        <Route path={ROUTES.login} component={LoginPage} />
+      </Router>
     </div>
   );
 }
