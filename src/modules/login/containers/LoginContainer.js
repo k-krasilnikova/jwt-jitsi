@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import Login from "../components";
 import { ROUTES } from "../../../constants";
 import { history } from "../../../helpers/history";
-import { loginCall } from "../../../apiCalls";
+// import { loginCall } from "../../../apiCalls";
 
 const LoginContainer = ({ setUser }) => {
   const [error, setError] = useState("");
@@ -20,19 +20,19 @@ const LoginContainer = ({ setUser }) => {
   });
 
   const login = ({ username, password }, { setSubmitting }) => {
-    setError();
-    loginCall(username, password).then(
-      (user) => {
-        if (user) {
-          setUser("kakaka");
-          history.push(ROUTES.home);
-        }
-      },
-      (error) => {
-        setError(JSON.stringify(error));
-        setSubmitting(false);
-      }
-    );
+    setError("");
+    // loginCall(username, password).then(
+    //   (user) => {
+    //     if (user) {
+    setUser("kakaka");
+    history.push(ROUTES.home);
+    //     }
+    //   },
+    //   (error) => {
+    //     setError(JSON.stringify(error));
+    //     setSubmitting(false);
+    //   }
+    // );
   };
 
   return (
