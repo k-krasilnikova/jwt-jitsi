@@ -9,6 +9,7 @@ const RouterContainer = () => {
 
   const logout = () => {
     setUser("");
+    localStorage.removeItem("jwt");
     history.push(ROUTES.login);
   };
 

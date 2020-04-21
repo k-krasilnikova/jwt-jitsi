@@ -4,13 +4,15 @@ import * as Yup from "yup";
 import Login from "../components";
 import { ROUTES } from "../../../constants";
 import { history } from "../../../helpers/history";
-// import { loginCall } from "../../../apiCalls";
+import { loginCall } from "../../../apiCalls";
 
 const LoginContainer = ({ currentUser, setUser }) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (currentUser) {
+    const jwt = localStorage.getItem("jwt");
+    if (jwt) {
+      setUser(jwt);
       history.push(ROUTES.home);
     }
   }, [currentUser]);
@@ -27,18 +29,20 @@ const LoginContainer = ({ currentUser, setUser }) => {
 
   const login = ({ username, password }, { setSubmitting }) => {
     setError("");
-    // loginCall(username, password).then(
-    //   (user) => {
-    //     if (user) {
-    setUser("kakaka");
-    history.push(ROUTES.home);
-    //     }
-    //   },
-    //   (error) => {
-    //     setError(JSON.stringify(error));
-    //     setSubmitting(false);
-    //   }
-    // );
+    loginCall(username, password).then(
+      (response) => {
+        if (response) {
+          const { jwt } = response;
+          setUser(jwt);
+          localStorage.setItem("jwt", jwt);
+          history.push(ROUTES.home);
+        }
+      },
+      (error) => {
+        setError(JSON.stringify(error));
+        setSubmitting(false);
+      }
+    );
   };
 
   return (

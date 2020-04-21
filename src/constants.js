@@ -3,7 +3,7 @@ export const ROUTES = {
   home: "/",
 };
 
-export const API_URL = "/api/values";
+export const API_URL = "https://webapplicationjwt.azurewebsites.net/api/user";
 
 export const JITSI_ROOM = {
   room: "testt",
