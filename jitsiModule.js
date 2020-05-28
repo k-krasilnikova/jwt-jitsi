@@ -308,3 +308,4 @@ catch(error) {
 return false;
 };
 document.getElementById("button").onclick = joinSession;
+document.getElementById("buttonDis").onclick = disconnect;

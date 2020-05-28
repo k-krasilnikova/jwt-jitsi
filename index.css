@@ -16,6 +16,10 @@
     height: 30px;
 }
 
+.disconnect {
+    display: flex;
+}
+
 .videoRecordingWrapper {
     display: flex;
     padding: 100px;
