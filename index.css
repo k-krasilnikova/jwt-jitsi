@@ -14,10 +14,13 @@
 
 #button {
     height: 30px;
+    width: 75px;
 }
 
 .disconnect {
     display: flex;
+    width: 170px;
+    justify-content: space-between;
 }
 
 .videoRecordingWrapper {
