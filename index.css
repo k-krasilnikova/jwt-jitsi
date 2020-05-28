@@ -1,8 +1,7 @@
 .videoRecordingWrapper {
     background-color: #000000;
-    position: fixed; 
-    right: 0; 
-    bottom: 0;
+    display: flex;
+    padding: 100px;
     min-width: 100%; 
     min-height: 100%;
     width: auto; 
@@ -11,15 +10,10 @@
 
 }
 
-.videoRecordingWrapper video {    
-    position: fixed; 
-    right: 0; 
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    width: auto; 
-    height: auto; 
-    z-index: -100;
+.videoRecordingWrapper video {
+    width: 320px;
+    height: 240px;
+    margin: 40px;
 }
 
 .coonectionStatusMessage {
