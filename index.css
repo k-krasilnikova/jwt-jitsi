@@ -1,3 +1,17 @@
+.bridge {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.bridge-form {
+    width: auto;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .videoRecordingWrapper {
     display: flex;
     padding: 100px;

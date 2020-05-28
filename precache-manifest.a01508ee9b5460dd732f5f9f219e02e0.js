@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "695b6840e0acfc64bb088576ba2196ba",
+    "revision": "f8c1f1ec5e5325f585e31acbdf92657b",
     "url": "/jwt-jitsi/index.html"
   },
   {
