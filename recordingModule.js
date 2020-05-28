@@ -261,7 +261,7 @@ function initJitsi (options) {
 
 try {   
     var options = getParamsFormUrl();     
-    var env = "thunk";//options.env;   
+    var env = options.env;   
     switch(env) {
         case "prod": 
             env = "";
@@ -270,7 +270,6 @@ try {
           env += ".";
           break;
     }
-    console.error(env);
 
     $.when(        
         $.getScript("https://" + env + "collaborate.center/app/lib-jitsi-meet/lib-jitsi-meet.min.js"),
@@ -284,11 +283,9 @@ try {
             type: "get",
             url: videoBridgeUrl,
             error: function (request, error) {
-                console.error(error);
                 console.error(arguments);        
             },
             success: function (response) {
-                console.error(response);
                 config = response;
                 initJitsi(options);
             }
