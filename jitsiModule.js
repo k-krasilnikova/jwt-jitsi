@@ -263,8 +263,8 @@ function initJitsi (options) {
 }
 
 
-$("button[type='button']").click(function(event) {
-    console.log('Start');
+function lol(event) {
+    console.log('Start', event);
 try {   
     var options = getParamsFormUrl();     
     var env = options.env;   
@@ -303,4 +303,5 @@ catch(error) {
     console.log(error);
 }
 return false;
-});
+};
+document.getElementById("lol").onclick = lol;
