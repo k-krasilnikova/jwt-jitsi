@@ -263,9 +263,10 @@ function initJitsi (options) {
 }
 
 
-function lol(event) {
-    console.log('Start', event);
+function joinSession() {
 try {   
+    $(".videoRecordingWrapper").empty();
+    disconnect();
     var options = getParamsFormUrl();     
     var env = options.env;   
     switch(env) {
@@ -304,4 +305,4 @@ catch(error) {
 }
 return false;
 };
-document.getElementById("lol").onclick = lol;
+document.getElementById("button").onclick = joinSession;
