@@ -71,11 +71,11 @@ function getRemoteVideoTrack(participant) {
 function attachVideo(track, participant) {
     participant = parseInt(participant, 10)
     var $streamElement = getVideoStreamElement(track);
-    $streamElement.hide();
-    $streamElement.width($(window).width());
-    $streamElement.height($(window).height());
-    if (participant == recordedUserId) {
-        $streamElement.show();
+    // $streamElement.hide();
+    $streamElement.width(300);
+    $streamElement.height(220);
+    // if (participant == recordedUserId) {
+        // $streamElement.show();
         if (!isSreamLoaded) {
             isSreamLoaded = true;
             var values = {
@@ -85,7 +85,7 @@ function attachVideo(track, participant) {
         }
         room.selectParticipant(participant)
         console.error("Participant selected")
-    }
+    // }
     track.attach($streamElement[0]);
     console.error("Remote track attached")
 
@@ -190,11 +190,11 @@ function onConnectionSuccess() {
 function onConnectionFailed() {
     console.error("Connection Failed!");
     window.errorMessage = "Connection Failed";
-    if (room) {
-        room.leave().then(function () {
-            connection.disconnect();
-        });
-    }
+    // if (room) {
+    //     room.leave().then(function () {
+    //         connection.disconnect();
+    //     });
+    // }
 }
 
 
