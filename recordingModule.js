@@ -270,7 +270,7 @@ try {
           env += ".";
           break;
     }
-    console.log(env);
+    console.error(env);
 
     $.when(        
         $.getScript("https://" + env + "collaborate.center/app/lib-jitsi-meet/lib-jitsi-meet.min.js"),
@@ -284,11 +284,11 @@ try {
             type: "get",
             url: videoBridgeUrl,
             error: function (request, error) {
-                console.log(error);
+                console.error(error);
                 console.error(arguments);        
             },
             success: function (response) {
-                console.log(response);
+                console.error(response);
                 config = response;
                 initJitsi(options);
             }
