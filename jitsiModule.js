@@ -16,19 +16,23 @@ var appId = 'collaborate.center';
 
 function getParamsFormUrl() {
     var options = {};
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (typeof options[pair[0]] === "undefined") {
-            options[pair[0]] = decodeURIComponent(pair[1]);
-        } else if (typeof options[pair[0]] === "string") {
-            var arr = [options[pair[0]], decodeURIComponent(pair[1])];
-            options[pair[0]] = arr;
-        } else {
-            options[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-    }
+    // var query = window.location.search.substring(1);
+    // var vars = query.split("&");
+    // for (var i = 0; i < vars.length; i++) {
+    //     var pair = vars[i].split("=");
+    //     if (typeof options[pair[0]] === "undefined") {
+    //         options[pair[0]] = decodeURIComponent(pair[1]);
+    //     } else if (typeof options[pair[0]] === "string") {
+    //         var arr = [options[pair[0]], decodeURIComponent(pair[1])];
+    //         options[pair[0]] = arr;
+    //     } else {
+    //         options[pair[0]].push(decodeURIComponent(pair[1]));
+    //     }
+    // }
+    
+    options.env = $("#env").val();
+    options.conferenceId = $("#sessionId").val();
+    options.token = $("#token").val();
     return options;
 }
 
@@ -259,6 +263,8 @@ function initJitsi (options) {
 }
 
 
+$("button[type='button']").click(function(event) {
+    console.log('Start');
 try {   
     var options = getParamsFormUrl();     
     var env = options.env;   
@@ -296,3 +302,5 @@ try {
 catch(error) {
     console.log(error);
 }
+return false;
+});
